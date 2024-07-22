@@ -1,0 +1,145 @@
+:root {
+    --background-color-light: #f0f0f0;
+    --background-color-dark: #333;
+    --text-color-light: #000;
+    --text-color-dark: #fff;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --shadow-light: 0 4px 30px rgba(0, 0, 0, 0.1);
+    --shadow-dark: 0 4px 30px rgba(255, 255, 255, 0.1);
+    --button-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    --button-shadow-hover: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+.stopwatch-container {
+    text-align: center;
+}
+
+.stopwatch {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    width: 350px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .stopwatch {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: var(--shadow-dark);
+}
+
+#display {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--button-shadow);
+}
+
+.buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--button-shadow-hover);
+}
+
+#startStopBtn {
+    background-color: var(--success-color);
+    color: #fff;
+}
+
+#startStopBtn:hover {
+    background-color: #218838;
+}
+
+#lapBtn {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+#lapBtn:hover {
+    background-color: #0056b3;
+}
+
+#resetBtn {
+    background-color: var(--danger-color);
+    color: #fff;
+}
+
+#resetBtn:hover {
+    background-color: #c82333;
+}
+
+#laps {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+.lap {
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+body.dark-mode .lap {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#themeToggle {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: #fff;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--button-shadow);
+}
+
+#themeToggle:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--button-shadow-hover);
+    background-color: #5a6268;
+}
